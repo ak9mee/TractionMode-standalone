@@ -14,27 +14,6 @@ Citizen.CreateThread(function()
 	end)
 end)
 
-cruse = false
-Citizen.CreateThread(function()
-	if Config.CCon == true then
-		while true do
-		Wait(20)
-		local playerped = GetPlayerPed(-1)
-			if IsPedSittingInAnyVehicle(playerped) then 
-			local veh =	GetVehiclePedIsIn(playerped,false)
-				if playerped == GetPedInVehicleSeat(veh,-1) then
-					if IsControlPressed(0,Config.CCkey) then
-					cruse = true
-					Cruse()
-					end
-				end
-			else
-			Wait(2500)	
-			end
-		end
-	end
-end)
-
 
 
 function TC()
